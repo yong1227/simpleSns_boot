@@ -41,7 +41,7 @@ public class UserController {
 		
 		List<UserVO> userList = userService.findUsers();
 		
-		responseResult.setCode(HttpStatus.OK);
+		responseResult.setCode(HttpStatus.OK.value());
 		responseResult.setMessage("Success");
 		responseResult.setData(userList);
 		
@@ -53,7 +53,7 @@ public class UserController {
 		
 		userVO = userService.findUserById(id);
 		
-		responseResult.setCode(HttpStatus.OK);
+		responseResult.setCode(HttpStatus.OK.value());
 		responseResult.setMessage("Success");
 		responseResult.setData(userVO);
 		
@@ -70,7 +70,7 @@ public class UserController {
 		
 		userVO = userService.findUserById(id);
 		
-		responseResult.setCode(HttpStatus.OK);
+		responseResult.setCode(HttpStatus.OK.value());
 		responseResult.setMessage("Success");
 		responseResult.setData(userVO);
 		
@@ -92,7 +92,7 @@ public class UserController {
 		
 		tokenVO = userService.findTokenByToken(tokenToString);
 		
-		responseResult.setCode(HttpStatus.OK);
+		responseResult.setCode(HttpStatus.OK.value());
 		responseResult.setMessage("Success");
 		responseResult.setData(tokenVO);
 		

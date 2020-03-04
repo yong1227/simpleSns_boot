@@ -148,7 +148,7 @@ public class PostController {
 		} else {
 			result = "로그인을 해주세요. 글 작성자만 글을 수정할 수 있습니다.";
 		}
-		responseResult.setCode(HttpStatus.OK);
+		responseResult.setCode(HttpStatus.OK.value());
 		responseResult.setMessage(result);
 		responseResult.setData(postVO);
 
@@ -165,7 +165,7 @@ public class PostController {
 		
 		if (postVO == null) {
 			result = "해당 번호는 없는 글입니다.";
-			responseResult.setCode(HttpStatus.INTERNAL_SERVER_ERROR);
+			responseResult.setCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
 			responseResult.setMessage("Error : "+ result);
 			responseResult.setData(null);
 			return responseResult;
@@ -182,20 +182,20 @@ public class PostController {
 				postService.deletePostByPostId(postId);
 				
 				postVO = postService.findPostById(postId);
-				responseResult.setCode(HttpStatus.OK);
+				responseResult.setCode(HttpStatus.OK.value());
 				responseResult.setMessage("Success");
 				responseResult.setData(postVO);
 				logger.info("responseResult : "+ responseResult.toString());
 			} else {
 				result = "글 작성자만 글을 삭제할 수 있습니다.";
-				responseResult.setCode(HttpStatus.INTERNAL_SERVER_ERROR);
+				responseResult.setCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
 				responseResult.setMessage("Error : "+ result);
 				responseResult.setData(null);
 			}
 		} else {
 			result = "로그인을 해주세요. 글 작성자만 글을 삭제할 수 있습니다.";
 			
-			responseResult.setCode(HttpStatus.INTERNAL_SERVER_ERROR);
+			responseResult.setCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
 			responseResult.setMessage("Error : "+ result);
 			responseResult.setData(null);
 		}
