@@ -22,6 +22,6 @@
 ---
 
 # 블로그
- _https://thankstory.tistory.com
+ https://thankstory.tistory.com
 
 #### ````이 프로젝트는 CodePresso Dev-Ops 과정 중 실습한 프로젝트입니다.````
