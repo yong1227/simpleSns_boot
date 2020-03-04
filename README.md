@@ -1,5 +1,5 @@
 # SNS Project (springboot version)
-![main](./image/main.png)
+![main](https://user-images.githubusercontent.com/46583498/75926388-d25ec200-5ead-11ea-9f61-dbf89728f47a.png)
 
 # 프로젝트 소개
   ***SNS 기능을 구현한 프로젝트입니다.***
