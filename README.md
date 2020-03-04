@@ -4,8 +4,6 @@
 # 프로젝트 소개
   ***SNS 기능을 구현한 프로젝트입니다.***
   
-
-
 # 기능
   - 회원가입 
   - 로그인
@@ -22,5 +20,8 @@
   -  FreeMarker
 
 ---
+
+# 블로그
+ _https://thankstory.tistory.com
 
 #### ````이 프로젝트는 CodePresso Dev-Ops 과정 중 실습한 프로젝트입니다.````
