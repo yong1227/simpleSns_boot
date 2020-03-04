@@ -1,6 +1,5 @@
 package com.simple.sns.domain;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
 import lombok.AllArgsConstructor;
