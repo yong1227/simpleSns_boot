@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.user">
+	<resultMap type="userVO" id="userResult">
+		<result property="id" column="id" />
+		<result property="username" column="username" />
+		<result property="password" column="password" />
+		<result property="createdAt" column="created_at" />
+	</resultMap>
+
+	<resultMap type="tokenVO" id="tokenResult">
+		<result property="token" column="token" />
+		<result property="userId" column="user_id" />
+		<result property="createdAt" column="created_at" />
+	</resultMap>
+
+	<select id="findUsers" resultMap="userResult">
+	    <![CDATA[
+	       select * from user
+	    ]]>
+	</select>
+
+	<select id="findUserByUsernameAndPassword"
+		resultMap="userResult" parameterType="userVO">
+		<![CDATA[
+			select * from user	
+			where username=#{username} and password=#{password}		
+		]]>
+	</select>
+
+	<select id="findUserById" resultMap="userResult"
+		parameterType="Long">
+		<![CDATA[
+			select * from user
+			where id=#{id}		
+		]]>
+	</select>
+
+	<insert id="insertUser" parameterType="userVO" keyProperty="id"
+		useGeneratedKeys="true">
+		<![CDATA[
+			 insert into user(username, password)
+			 values(#{username}, #{password})
+		]]>
+	</insert>
+
+	<!-- (임시) -->
+	<select id="findUserByToken" parameterType="String"
+		resultMap="userResult">
+		<![CDATA[
+			select * from token join user on token.user_id = user.id where token.token = 'f4N7P89yx598O2uM6hTL';
+		]]>
+	</select>
+
+</mapper>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.post">
+
+	<resultMap type="userVO" id="userResult">
+		<result property="id" column="user_id" />
+		<result property="username" column="username" />
+		<result property="password" column="password" />
+		<result property="createdAt" column="user_created_at" />
+	</resultMap>
+
+	<resultMap type="postVO" id="postResult">
+		<result property="id" column="id" />
+		<result property="userId" column="user_id" />
+		<result property="title" column="title" />
+		<result property="content" column="content" />
+		<result property="createdAt" column="created_at" />
+	</resultMap>
+
+	<resultMap type="postAndUserVO" id="postAndUserResult">
+		<result property="id" column="id" />
+		<result property="userId" column="user_id" />
+		<result property="title" column="title" />
+		<result property="content" column="content" />
+		<result property="createdAt" column="created_at" />
+		<association property="user" resultMap="userResult" />
+	</resultMap>
+
+	<insert id="insertPostByTitleAndContent" parameterType="postVO"
+		useGeneratedKeys="true" keyProperty="id">
+		<![CDATA[
+			insert into post (user_id, title, content) 
+			values (#{userId}, #{title}, #{content})
+		]]>
+	</insert>
+
+	<select id="findPostById" parameterType="Long"
+		resultMap="postResult">
+		<![CDATA[
+			select * from post
+			where id=#{id}
+		]]>
+	</select>
+
+	<select id="findPostAndUserByPostId" parameterType="Long"
+		resultMap="postAndUserResult">
+		<![CDATA[
+			select post.id, user_id, title, content, post.created_at, user.id, username, password, user.created_at as user_created_at from test.post inner join test.user on test.post.user_id = test.user.id
+			where post.id=#{postId}
+		]]>
+	</select>
+
+	<select id="findPostsAndUserWithIsFollow" resultMap="postAndUserResult" parameterType="Long">
+		<![CDATA[
+			select post.id, user_id, title, content, post.created_at, user.id, username, password, user.created_at as user_created_at 
+			from test.post 
+			inner join test.user on test.post.user_id = test.user.id 
+			group by post.id
+			order by post.created_at desc
+		]]>
+	</select>
+	
+	<select id="findPostsAndUser" resultMap="postAndUserResult">
+		<![CDATA[
+			select post.id, user_id, title, content, post.created_at, user.id, username, password, user.created_at as user_created_at 
+			from test.post 
+			inner join test.user on test.post.user_id = test.user.id 
+			group by post.id
+			order by post.created_at desc
+		]]>
+	</select>
+
+	<select id="findPostAndUserByUserId" parameterType="Long"
+		resultMap="postAndUserResult">
+		<![CDATA[
+			select post.id, user_id, title, content, post.created_at, user.id, username, password, user.created_at as user_created_at 
+			from test.post 
+			inner join test.user on test.post.user_id = test.user.id
+			where test.post.user_id=#{userId}
+			order by post.created_at desc
+		]]>
+	</select>
+
+	<!-- <select id="findPostAndUserByToken" parameterType="String" resultMap="postAndUserResult"> 
+		<![CDATA[ select post.id, post.user_id, post.title, post.content, post.created_at, 
+		user.id, user.username, user.password, user.created_at as user_created_at 
+		from post join user on post.user_id = user.id join token on post.user_id 
+		= token.user_id where token.token=#{token} group by post.id order by post.created_at 
+		desc ]]> </select> -->
+
+	<update id="updatePostTitleAndContent" parameterType="postVO">
+		update post
+		set title=#{title}, content=#{content} where id = #{id};
+	</update>
+
+	<delete id="deletePostByPostId" parameterType="Long">
+		<![CDATA[
+			delete from post where id=#{postId};
+		]]>
+	</delete>
+
+	<select id="findMyPostAndUserAndMyFollowerByUserId" parameterType="Long"
+		resultMap="postAndUserResult">
+		<![CDATA[
+			SELECT post.id, post.user_id, title, content, post.created_at, user.id, username, password, user.created_at as user_created_at 
+			FROM post 
+			JOIN user on post.user_id = user.id
+			JOIN feed on post.id = feed.post_id
+			WHERE feed.user_id = #{postId}
+			GROUP BY post.id 
+			ORDER BY post.created_at desc
+		]]>
+	</select>
+</mapper>
