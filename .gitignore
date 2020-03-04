@@ -14,6 +14,9 @@ target/
 .sts4-cache
 *.properties
 *.jar
+.mvn
+mvnw
+*.cmd
 
 ### IntelliJ IDEA ###
 .idea
