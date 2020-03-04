@@ -14,7 +14,7 @@ target/
 .sts4-cache
 *.properties
 *.jar
-.mvn
+.mvn/
 mvnw
 *.cmd
 
