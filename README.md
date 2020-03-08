@@ -24,7 +24,8 @@
  - MySQL simpleSns_tables.sql 파일 실행 --> 데이터베이스, 테이블 생성
  
 # 실행 방법
- Boot Dashboard --> local --> simpleSns 우클릭 -- start
+ - eclipse : Boot Dashboard --> local --> simpleSns 우클릭 -- start
+ - cmd : 프로젝트 다운로드 --> cmd 창에서 해당 프로젝트 경로 이동 --> 'mvn package' 명렁어 입력 (jar 파일 생성)--> target 폴더로 이동 -->     'java -jar simpleSns-0.0.1-SNAPSHOT.jar' 명령어 입력(jar 파일 실행)
 
 # 블로그
  https://thankstory.tistory.com
