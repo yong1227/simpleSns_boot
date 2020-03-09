@@ -22,7 +22,7 @@
  - STS 설치 (Spring boot는 4버전 권장) (https://spring.io/tools)
  - MySQL, MySQL Workbench 설치 (https://dev.mysql.com/downloads/)
  - MySQL simpleSns_tables.sql 파일 실행 --> 데이터베이스, 테이블 생성
- - resource폴더에 aplication.properties생성 --> 로컬의 MySQL 관련 정보 기입 (classname, url, username, password) --> freemarker, js 파일 위치 설정
+ - resource폴더에 aplication.properties생성 --> 로컬의 MySQL 관련 정보, freemarker, js 파일 위치 설정 작성
  ```
  #jdbc 
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
