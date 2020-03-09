@@ -25,7 +25,7 @@
  
 # 실행 방법
  - Eclipse : Boot Dashboard --> local --> simpleSns 우클릭 -- start
- - cmd : 프로젝트 다운로드 --> cmd 창에서 해당 프로젝트 경로 이동 --> 'mvn package' 명렁어 입력 (jar 파일 생성)--> target 폴더로 이동 -->     'java -jar simpleSns-0.0.1-SNAPSHOT.jar' 명령어 입력(jar 파일 실행)
+ - cmd : 프로젝트 다운로드 --> cmd 창에서 해당 프로젝트 경로로 이동 --> 'mvn package' 명령어 입력 (jar 파일 생성)--> target 폴더로 이동 -->     'java -jar simpleSns-0.0.1-SNAPSHOT.jar' 명령어 입력(jar 파일 실행) --> 브라우저 주소창에 'localhost:8080' 입력
 
 # 블로그
  https://thankstory.tistory.com
