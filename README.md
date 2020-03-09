@@ -5,17 +5,18 @@
   ***SNS 기능을 구현한 프로젝트입니다.***
   
 # 기능
-  - 회원가입 
-  - 로그인
-  - 글 작성
-  - 글 수정
-  - 글 삭제
+  - 회원가입 / 로그인 / 로그아웃
+  - 로그인 시 토큰 생성
+  - 글 작성 / 수정 / 삭제
+  - 나의 글 / 전체 글 
   - 팔로우 버튼
 
 # 사용 기술
-  -  Spring Boot
-  -  JPA
-  -  FreeMarker
+  - Spring Boot
+  - Rest Api
+  - Mybatis --> JPA
+  - SQL
+  - FreeMarker
   
 # 필수 조건 
  - 자바 설치 (https://www.oracle.com/java/technologies/javase-jdk8-downloads.html)
