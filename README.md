@@ -20,8 +20,8 @@
 # 필수 조건 
  - 자바 설치 (https://www.oracle.com/java/technologies/javase-jdk8-downloads.html)
  - STS 설치 (Spring boot는 4버전 권장) (https://spring.io/tools)
- - MySQL, MySQL Workbench 설치 (https://dev.mysql.com/downloads/)
- - MySQL simpleSns_tables.sql 파일 실행 --> 데이터베이스, 테이블 생성
+ - MySQL(5.7), MySQL Workbench(8) 설치 (https://dev.mysql.com/downloads/)
+ - 프로젝트 폴더에 simpleSns_tables.sql 파일 실행 --> 데이터베이스, 테이블 생성
  - resource폴더에 aplication.properties생성 --> 로컬의 MySQL 관련 정보, freemarker, js 파일 위치 설정 작성
  ```
  #jdbc 
