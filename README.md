@@ -14,7 +14,7 @@
 # 사용 기술
   - Spring Boot
   - Rest Api
-  - Mybatis --> JPA
+  - Mybatis
   - SQL
   - FreeMarker
   
